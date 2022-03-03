@@ -10,14 +10,17 @@ public class Main {
     public static void main(String[] args) {
         Random rand = new Random();
         int upper = 25;
-        int result;
+        int result =0;
+        int lastResult =0;
         int tries = 0;
         Main mainObject = new Main();
         int intRandom = rand.nextInt(upper);
         Scanner scanner = new Scanner(System.in);
         do {
+            lastResult = result;
             System.out.println("Guess a number between 0 and 24: ");
             result = scanner.nextInt();
+            if(result !=lastResult)
             tries++;
         }while(!(mainObject.guess(intRandom,result)));
         System.out.println("It took "+tries);
